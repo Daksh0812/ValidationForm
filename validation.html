@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .A{
+            align-items: center;
+            border-radius: 10px 10px 10px 10px;
+            justify-content: center;
+            text-align: center;
+            text-shadow: 8px black;
+            font-weight: bold;
+            text-shadow:0px 0px 0px black;
+
+        }
+        .B{
+            background-color: aquamarine;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: solid 4px rgb(48, 203, 152);
+            padding:30px;
+            height: 300px;
+            box-shadow: 10px 10px 15px rgb(110, 214, 214);
+        }
+        .C{
+            height: 30px;
+            border-radius: 50%;
+            text-align: center;
+            padding: 20px
+
+        }
+
+    </style>
+</head>
+<body>
+    <div class="B"><form action="">
+        <h1 class="A">Welcome</h1>
+        <div class="A"><label for="">Username</label></div>
+        <input type="text" value="" id="Username">
+        <div class="A"><label for="">Email</label></div>
+        <input typle="Email" value="" id="Email">
+        <div class="A"><label for="">Password</label></div>
+        <input type="Password" value="" id="Password">
+        <div class="A"><label for="">Confirm Password</label></div>
+        <input type="Password" value="" id="confirmPassword">
+        <div class="C"><button type="submit" onclick="submitform()">Submit</button></div>
+
+    </form></div>
+    <script>
+        const submitform=()=>{
+            let Username= document.getElementById("Username").value
+            let Password= document.getElementById("Password").value
+            let Email= document.getElementById("Email").value
+            let confirmPassword= document.getElementById("confirmPassword").value
+            console.log("checking the form")
+        
+            if (!Username || !Password || !confirmPassword){
+                window.alert("please enter all the input fields")
+                return
+            }
+            if(Password.lenght<8){
+                window.alert("Password must be at least 8 characters")
+                return
+            }
+            if(Password !== confirmPassword){
+                window.alert("Password do not match")
+                return
+            }
+            else{
+                window.alert("form submitted successfully.")
+            }
+        }
+    </script>
+    
+</body>
+</html>
